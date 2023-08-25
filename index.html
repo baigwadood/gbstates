@@ -414,15 +414,14 @@ Excellent communication along the way. We negotiated the deal last minute and th
         <iframe src="https://albert.streamlit.app/?embed=true&embed_options=dark_theme,light_theme&ref=XXXXXXXX" width="100%" height="600px" frameborder="0"></iframe>
     </div>
 
-    <script>
-        // Toggle the visibility of the iframe container when the chatbot bubble is clicked
-        const chatbotBubble = document.getElementById('chatbot-container');
-        const iframeContainer = document.getElementById('chatbot-iframe-container');
+    <div id="chatbot-iframe-container" style="display: none;">
+    <!-- Close button -->
+    <button id="close-chatbot">Close</button>
+    <iframe src="https://albert.streamlit.app/?embed=true&embed_options=dark_theme,light_theme&ref=XXXXXXXX" width="100%" height="600px" frameborder="0"></iframe>
+</div>
 
-        chatbotBubble.addEventListener('click', () => {
-            iframeContainer.style.display = 'block';
-        });
-    </script>
+
+
 </body>
 
 
@@ -444,6 +443,33 @@ Excellent communication along the way. We negotiated the deal last minute and th
     <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
     <!-- Core theme JS-->
     <script src="js/scripts.js"></script>
+
+    <script>
+        // Toggle the visibility of the iframe container when the chatbot bubble is clicked
+        const chatbotBubble = document.getElementById('chatbot-container');
+        const iframeContainer = document.getElementById('chatbot-iframe-container');
+
+        chatbotBubble.addEventListener('click', () => {
+            iframeContainer.style.display = 'block';
+        });
+    </script>
+
+<script>
+    const closeChatbotButton = document.getElementById('close-chatbot');
+    const iframeContainer = document.getElementById('chatbot-iframe-container');
+
+    // Show iframe container when chatbot bubble is clicked
+    chatbotBubble.addEventListener('click', () => {
+        iframeContainer.style.display = 'block';
+    });
+
+    // Hide iframe container when close button is clicked
+    closeChatbotButton.addEventListener('click', () => {
+        iframeContainer.style.display = 'none';
+    });
+</script>
+
+    
     <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
     <!-- * *                               SB Forms JS                               * *-->
     <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
