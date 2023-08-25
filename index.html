@@ -455,17 +455,16 @@ Excellent communication along the way. We negotiated the deal last minute and th
     </script>
 
 <script>
-    const closeChatbotButton = document.getElementById('close-chatbot');
+    // Toggle the visibility of the iframe container when the chatbot bubble is clicked
+    const chatbotBubble = document.getElementById('chatbot-container');
     const iframeContainer = document.getElementById('chatbot-iframe-container');
 
-    // Show iframe container when chatbot bubble is clicked
     chatbotBubble.addEventListener('click', () => {
-        iframeContainer.style.display = 'block';
-    });
-
-    // Hide iframe container when close button is clicked
-    closeChatbotButton.addEventListener('click', () => {
-        iframeContainer.style.display = 'none';
+        if (iframeContainer.style.display === 'block') {
+            iframeContainer.style.display = 'none';
+        } else {
+            iframeContainer.style.display = 'block';
+        }
     });
 </script>
 
