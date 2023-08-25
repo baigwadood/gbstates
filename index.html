@@ -26,7 +26,42 @@
     <link href="css/styles.css" rel="stylesheet" />
 </head>
 
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chatbot Embed</title>
+<style>
+  /* Styles for the chat bubble container */
+  .chat-bubble-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: transform 0.3s ease-in-out;
+  }
 
+  /* Styles for the close button */
+  .close-button {
+    cursor: pointer;
+    padding: 5px 10px;
+  }
+</style>
+</head>
+<body>
+  <!-- Chat bubble container -->
+  <div class="chat-bubble-container" id="chatBubble">
+    <!-- Close button -->
+    <div class="close-button" id="closeButton">X</div>
+    <!-- Embed iframe -->
+    <iframe src="https://albert.streamlit.app/?embed=true&embed_options=dark_theme,light_theme&ref=XXXXXXXX" width="350px" height="500px" frameborder="0"></iframe>
+  </div>
+
+
+
+    
     
 <body id="page-top">
     <!-- Navigation-->
@@ -274,51 +309,6 @@ Excellent communication along the way. We negotiated the deal last minute and th
 
 
 
-                                       <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chatbot Embed</title>
-<style>
-  /* Style for the chat bubble container */
-  .chat-bubble-container {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #fff;
-    border-radius: 20px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-    transition: transform 0.3s ease-in-out;
-  }
-
-  /* Style for the close button (optional) */
-  .close-button {
-    cursor: pointer;
-    padding: 5px 10px;
-  }
-</style>
-</head>
-<body>
-  <!-- Chat bubble container -->
-  <div class="chat-bubble-container">
-    <!-- Close button (optional) -->
-    <div class="close-button">X</div>
-    <!-- Embed iframe -->
-    <iframe src="https://albert.streamlit.app/?embed=true&embed_options=dark_theme,light_theme&ref=XXXXXXXX" width="350px" height="500px" frameborder="0"></iframe>
-  </div>
-
-  <!-- Your website content goes here -->
-
-</body>
-</html>
-
-
-
-
-
-
-
-
 
                                     
                                                     </div>
@@ -467,6 +457,25 @@ Excellent communication along the way. We negotiated the deal last minute and th
                 autoPlay: true
             });
         });</script>
+
+
+
+<script>
+    // Get references to the close button and chat bubble container
+    const closeButton = document.getElementById('closeButton');
+    const chatBubble = document.getElementById('chatBubble');
+
+    // Add a click event listener to the close button
+    closeButton.addEventListener('click', () => {
+      // Hide the chat bubble container when the close button is clicked
+      chatBubble.style.display = 'none';
+    });
+  </script>
+</body>
+</html>
+
+
+    
     <style>
         .testimonial {
             border-left: 4px solid #d45113;
